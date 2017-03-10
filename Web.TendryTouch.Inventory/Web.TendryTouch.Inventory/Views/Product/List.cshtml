@@ -1,0 +1,51 @@
+﻿@using Web.TendryTouch.Models
+@using System.Collections.Specialized
+@using PagedList.Mvc; 
+@using PagedList;
+@using System.Web.Optimization
+
+@model List<Product>
+
+@{
+    ViewBag.Title = "List of Purchases";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+
+@section otherCSS { @Styles.Render("~/css/PagedList") }
+
+<h2>Lista de Productos</h2>
+
+<table class="table table-hover table-striped table-responsive">
+    <thead>
+        <tr>
+            <th>Barcode</th>
+            <th>Name</th>
+            <th>Purchase</th>
+            <th>Sale</th>
+            <th>Quantity</th>
+        </tr> 
+    </thead>
+    <tbody>
+        
+        @foreach (Product prod in (PagedList.IPagedList<Product>)ViewBag.OnePageOfProducts)
+        {
+            <tr class="row">
+                <td class="col-sm-3 col-md-3">@Html.ActionLink(prod.Barcode,"Edit")</td>
+                <td class="col-sm-3 col-md-3">@prod.Name</td>
+                <td class="col-sm-3 col-md-2">
+                    @string.Format("{0:0,0.00}", 
+                        prod.Stock.AsQueryable().OrderByDescending(o=>o.DateAdded).Select(s=>s.Price))
+                </td>
+                <td class="col-sm-3 col-md-2">
+                    @string.Format("{0:0,0.00}", 
+                        prod.Stock.AsQueryable().OrderByDescending(o=>o.DateAdded).Select(s=>s.PriceSale))
+                </td>
+                <td class="col-sm-3 col-md-2">
+                    @string.Format("{0:0,0}", 
+                        prod.Stock.AsQueryable().OrderByDescending(o=>o.DateAdded).Select(s=>s.Quantity))
+                </td>
+            </tr>
+        }
+        @Html.PagedListPager( (IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("List", new { page }) )
+    </tbody>
+</table>
