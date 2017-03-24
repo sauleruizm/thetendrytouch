@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 
 namespace Web.TendryTouch.WebApi.Data
 {
-	public class MySqlDbConfiguration : MySqlEFConfiguration
+	public class MySqlDbConfiguration :  MySqlEFConfiguration
 	{
 		/// <summary>
 		/// Set the initial infrastructure.

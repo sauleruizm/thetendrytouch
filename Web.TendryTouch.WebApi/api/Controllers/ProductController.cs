@@ -34,7 +34,7 @@ namespace Web.TendryTouch.WebApi.api.Controllers
 		[HttpGet]
 		public IHttpActionResult GetAll()
 		{
-			return Ok(_repository.GetAll<Product>().AsQueryable().Where(p => p.Stock.Count()>0).ToList());
+			return Ok(_repository.GetAll<Product>().AsQueryable());
 		}
     }
 }

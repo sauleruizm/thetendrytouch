@@ -5,19 +5,20 @@ using System;
 
 namespace Web.TendryTouch.Models
 {
-	
-	public class Product
-	{
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int ProducId { get; set; }
+	[Table("product")]
+	public partial class Product
+	{		
+
+		//[Key, Column(Order= 1)]
+		//public int ProductId { get; set; }
 
 		/// <summary>
-		/// It's a compleate barcode country+manofacture+id[productcode]
+		/// Define a relationship between Product & BarcodeHistory
+		/// show a list of Barcode of this product
 		/// </summary>
-		[MaxLength(13)]
-		[MinLength(13)]
-		public string Barcode { get; set; }
+		[Key,Column(Order = 1), ForeignKey(name: "BarcodeHistory")]
+		public int BarcodeId { get; set; }
+		public virtual BarcodeHistory BarcodeHistory { get; set; }
 
 		public string Name { get; set; }
 
@@ -34,13 +35,9 @@ namespace Web.TendryTouch.Models
 
 		public int Quantity { get; set; }
 
-		public int QuantitySale { get; set; }
+		
 
-		/// <summary>
-		/// Define a relationship between Product & Stock
-		/// show a list of stocks of this product
-		/// </summary>
-		public virtual ICollection<Stock> Stock {get; set;}
+		//public virtual Category Categories { get; set; }
 
 	}
 }

@@ -7,7 +7,7 @@ namespace Web.TendryTouch.WebApi.Data
 	/// <summary>
 	/// 
 	/// </summary>
-	[DbConfigurationType(typeof(MySqlEFConfiguration))]
+	[DbConfigurationType(typeof(MySqlDbConfiguration))]
 	public partial class MySqlContext: DbContext
 	{
 		#region -- Constructors, destructors, and finalizers --
@@ -29,7 +29,9 @@ namespace Web.TendryTouch.WebApi.Data
 
 			public DbSet<Product> Products { get; set; }
 
-			//public DbSet<Purchase> Purchases { get; set; }
+			public DbSet<Category> Categories { get; set; }
+
+			public DbSet<BarcodeHistory> Barcodes { get; set; }
 
 		#endregion -- Properties --;
 
@@ -38,7 +40,6 @@ namespace Web.TendryTouch.WebApi.Data
 
 			protected override void OnModelCreating(DbModelBuilder modelBuilder)
 			{
-				base.OnModelCreating(modelBuilder);
 			}
 
 		#endregion -- Methods --;

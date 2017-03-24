@@ -73,7 +73,7 @@ namespace Web.TendryTouch.WebApi.Controllers
 					response.Content.Headers.Add("content-Type", "image/png");
 					return response;
 				}
-				catch (Exception ex)
+				catch (Exception )
 				{
 
 					throw;

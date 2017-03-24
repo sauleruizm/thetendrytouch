@@ -1,64 +1,46 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Web.TendryTouch.Models
 {
-	public class BarcodeHistory
+	[Table("BarcodeHistory")]
+	public partial class BarcodeHistory
 	{
+		/// <summary>
+		/// Consecutive Identifier
+		/// </summary>
+		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public int BarcodeId { get; set; }
+
 		/// <summary>
 		/// Contry name of manufacturer
 		/// </summary>
-		[Key()]
-		public int Country
-		{
-			get;
-			set;
-		}
+		[Required]
+		public string Country { get; set; }
 
 		/// <summary>
 		/// Category of item
 		/// </summary>
-		[Required()]
-		public int TypeProduct
-		{
-			get;
-			set;
-		}
+		[Required]
+		public string TypeProduct { get; set; }
 
 		/// <summary>
 		/// Unique identifier of item
 		/// </summary>
-		public int CodeProduct
-		{
-			get;
-			set;
-		}
+		public string CodeProduct { get; set; }
 
 		/// <summary>
 		/// Briefly description of item
 		/// </summary>
-		public int Description
-		{
-			get;
-			set;
-		}
+		public string Description { get; set; }
 
 		/// <summary>
 		/// Name of item
 		/// </summary>
-		public int Name
-		{
-			get;
-			set;
-		}
+		public string Name { get; set; }
 
-		/// <summary>
-		/// Consecutive Identifier
-		/// </summary>
-		[Key()]
-		public int ID
-		{
-			get;
-			set;
-		}
+		public virtual Product Product { get; set; }
 	}
 }
