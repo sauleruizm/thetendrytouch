@@ -7,7 +7,8 @@ using System.Web.Http;
 using Microsoft.Owin;
 using Owin;
 using Web.TendryTouch.WebApi;
-using Web.TendryTouch.WebApi.Data;
+using Web.TendryTouch.WebApi.Migrations;
+using Web.TendryTouch.WebApi.Models;
 
 [assembly:OwinStartupAttribute(typeof(Startup))]
 namespace Web.TendryTouch.WebApi
@@ -21,7 +22,7 @@ namespace Web.TendryTouch.WebApi
 		public void Configuration(IAppBuilder app)
 		{
 			GlobalConfiguration.Configure(WebApiConfig.Register);
-			Database.SetInitializer(new DropCreateDatabaseAlways<MySqlContext>());
+			Database.SetInitializer<MySqlContext>(new MySqlDatabaseInitialization());
 		}
 	}
 }

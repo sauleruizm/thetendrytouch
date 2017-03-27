@@ -6,7 +6,7 @@ using System;
 namespace Web.TendryTouch.Models
 {
 	[Table("product")]
-	public partial class Product
+	public partial class Product: IEntity
 	{		
 
 		//[Key, Column(Order= 1)]

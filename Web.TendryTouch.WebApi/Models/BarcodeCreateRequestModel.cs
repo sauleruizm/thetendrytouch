@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Web.TendryTouch.WebApi.Data
+namespace Web.TendryTouch.WebApi.Models
 {
 	/// <summary>
 	/// https://en.wikipedia.org/wiki/International_Article_Number

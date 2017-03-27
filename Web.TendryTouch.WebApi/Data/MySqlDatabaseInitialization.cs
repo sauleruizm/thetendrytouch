@@ -1,15 +1,13 @@
-﻿using System.Data.Entity;
-using Web.TendryTouch.WebApi.Data;
-
-namespace Web.TendryTouch.WebApi.Data
+﻿namespace Web.TendryTouch.WebApi.Models
 {
-	public class MySqlDatabaseInitialization : DropCreateDatabaseIfModelChanges<MySqlContext>
-	{
-		protected override void Seed(MySqlContext context)
-		{
-			
-		}	
+	using System.Data.Entity;
+	using System.Data.Entity.Infrastructure;
+	using System.Data.Entity.Migrations;
+	using System.Diagnostics.Contracts;
+	using Web.TendryTouch.WebApi.Models;
 
-		
+	public class MySqlDatabaseInitialization : DropCreateDatabaseAlways<MySqlContext>
+	{
+
 	}
 }

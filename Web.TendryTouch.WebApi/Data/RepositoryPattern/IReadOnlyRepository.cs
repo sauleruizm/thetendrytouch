@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Web.TendryTouch.WebApi.Data.RepositoryPattern
+namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 {
 	public interface IReadOnlyRepository
 	{

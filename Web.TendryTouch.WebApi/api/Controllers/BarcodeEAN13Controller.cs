@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Web.Http;
-using Web.TendryTouch.WebApi.Data;
+using Web.TendryTouch.WebApi.Models;
 using Zen.Barcode;
 
 namespace Web.TendryTouch.WebApi.Controllers
@@ -33,7 +33,6 @@ namespace Web.TendryTouch.WebApi.Controllers
 
 		#endregion -- Properties --;
 
-
 		#region -- Methods --
 
 			/// <summary>
@@ -49,18 +48,13 @@ namespace Web.TendryTouch.WebApi.Controllers
 					string text = string.Concat<int>( new int[] { newBarcode.GS1Prefix,
 						newBarcode.ManufacterCode, newBarcode.ProductCode });
 
-					var barimg = Zen.Barcode.CodeEan13Checksum.Instance;
-
-					var draw = new Zen.Barcode.CodeEan13BarcodeDraw(barimg);
+					var barimg = BarcodeDrawFactory.CodeEan13WithChecksum;
 					
-					BarcodeMetrics barcodeMatrix = new BarcodeMetrics1d(newBarcode.Width, 
-						newBarcode.Height);
-
-
-					var img = draw.Draw( text, barcodeMatrix);
+					var img = barimg.Draw(text, newBarcode.Width);
+					img = AddText(img, text);
 					var memoryStream = new MemoryStream();
 					img.Save(memoryStream,System.Drawing.Imaging.ImageFormat.Png);
-				
+					
 					var response = new HttpResponseMessage(HttpStatusCode.OK) 
 					{
 						Content = new ByteArrayContent(memoryStream.ToArray()),
@@ -78,6 +72,20 @@ namespace Web.TendryTouch.WebApi.Controllers
 
 					throw;
 				}
+			}
+
+
+			public static Image AddText(this Image image, string text)
+			{
+				Graphics surface = Graphics.FromImage(image);
+				Font font = new Font("Tahoma", 10);
+
+				System.Drawing.SolidBrush brush = new SolidBrush(Color.Red);
+
+				surface.DrawString(text, font, brush, new PointF { X = 30, Y = 10 });
+
+				surface.Dispose();
+				return image;
 			}
 
 		#endregion -- Methods --;

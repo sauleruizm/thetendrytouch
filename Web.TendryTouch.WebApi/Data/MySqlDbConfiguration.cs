@@ -1,10 +1,12 @@
 ﻿using System.Data.Common;
+using System.Data.Entity;
 using MySql.Data.Entity;
 using MySql.Data.MySqlClient;
 
-namespace Web.TendryTouch.WebApi.Data
+namespace Web.TendryTouch.WebApi.Models
 {
-	public class MySqlDbConfiguration :  MySqlEFConfiguration
+	[DbConfigurationType(typeof(MySqlEFConfiguration))]
+	public class MySqlDbConfiguration :MySqlEFConfiguration
 	{
 		/// <summary>
 		/// Set the initial infrastructure.

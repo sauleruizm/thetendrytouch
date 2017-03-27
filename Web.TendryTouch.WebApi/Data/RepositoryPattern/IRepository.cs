@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Web.TendryTouch.Models;
 
-namespace Web.TendryTouch.WebApi.Data.RepositoryPattern
+namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 {
 	public interface IRepository: IReadOnlyRepository
 	{

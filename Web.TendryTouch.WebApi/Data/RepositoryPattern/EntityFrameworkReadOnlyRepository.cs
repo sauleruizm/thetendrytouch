@@ -5,9 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Web.TendryTouch.WebApi.Data.RepositoryPattern
+namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 {
-	public class EntityFrameworkReadOnlyRepository<TContext>: IReadOnlyRepository where TContext: DbContext
+	public class EntityFrameworkReadOnlyRepository<TContext>: IReadOnlyRepository 
+		where TContext: DbContext
 	{
 
 		#region -- Private member variables --

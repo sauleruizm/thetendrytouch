@@ -159,23 +159,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\Controllers\BarcodeController.cs" />
     <Compile Include="api\Controllers\BaseApiController.cs" />
     <Compile Include="api\Controllers\ProductController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="api\Controllers\BarcodeEAN13Controller.cs" />
-    <Compile Include="api\Controllers\PurchaseController.cs" />
     <Compile Include="Data\MySqlContext.cs" />
     <Compile Include="Data\MySqlDatabaseInitialization.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\MySqlDbConfiguration.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Data\RepositoryPattern\EntityFrameworkReadOnlyRepository.cs" />
     <Compile Include="Data\RepositoryPattern\EntityFrameworkRepository.cs" />
-    <Compile Include="Data\RepositoryPattern\IEntity.cs" />
     <Compile Include="Data\RepositoryPattern\IReadOnlyRepository.cs" />
     <Compile Include="Data\RepositoryPattern\IRepository.cs" />
     <Compile Include="Migrations\201703242043251_First.cs" />

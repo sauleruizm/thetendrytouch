@@ -5,11 +5,12 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using Web.TendryTouch.Models;
 
-namespace Web.TendryTouch.WebApi.Data.RepositoryPattern
+namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 {
-	public class EntityFrameworkRepository<TContext>: EntityFrameworkReadOnlyRepository<TContext>, IRepository
-	where TContext :DbContext
+	public class EntityFrameworkRepository<TContext>: EntityFrameworkReadOnlyRepository<TContext>, 
+		IRepository where TContext :DbContext
 	{
 
 		#region -- Private member variables --

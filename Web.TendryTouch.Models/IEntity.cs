@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Web.TendryTouch.WebApi.Data.RepositoryPattern
+﻿namespace Web.TendryTouch.Models
 {
+	using System;
+
 	/// <summary>
 	/// Base class for RepositoryPattern
 	/// </summary>

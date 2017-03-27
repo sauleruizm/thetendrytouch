@@ -1,18 +1,16 @@
 namespace Web.TendryTouch.WebApi.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+	using System.Data.Entity.Migrations;
+	using Web.TendryTouch.WebApi.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Web.TendryTouch.WebApi.Data.MySqlContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MySqlContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Web.TendryTouch.WebApi.Data.MySqlContext context)
+        protected override void Seed(Web.TendryTouch.WebApi.Models.MySqlContext context)
         {
             //  This method will be called after migrating to the latest version.
 

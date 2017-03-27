@@ -1,6 +1,6 @@
 ﻿
 using System.Drawing;
-namespace Web.TendryTouch.WebApi.Data
+namespace Web.TendryTouch.WebApi.Models
 {
 	public class BarcodeCreateResponseModel : BarcodeCreateRequestModel
 	{

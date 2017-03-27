@@ -2,12 +2,12 @@
 using MySql.Data.Entity;
 using Web.TendryTouch.Models;
 
-namespace Web.TendryTouch.WebApi.Data
+namespace Web.TendryTouch.WebApi.Models
 {
 	/// <summary>
 	/// 
 	/// </summary>
-	[DbConfigurationType(typeof(MySqlDbConfiguration))]
+	[DbConfigurationType(typeof(MySqlEFConfiguration))]
 	public partial class MySqlContext: DbContext
 	{
 		#region -- Constructors, destructors, and finalizers --
