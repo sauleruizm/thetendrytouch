@@ -26,8 +26,17 @@ namespace Web.TendryTouch.WebApi.Models
 		/// <summary>
 		/// Represent a returned barcode size
 		/// </summary>
-		public int Width { get; set; }
+		public int Scale { get; set; }
 
+		/// <summary>
+		/// Height of image
+		/// </summary>
 		public int Height { get; set; }
+
+		/// <summary>
+		/// Color of Text
+		/// </summary>
+		public Color ColorText { get; set; }
+
 	}
 }

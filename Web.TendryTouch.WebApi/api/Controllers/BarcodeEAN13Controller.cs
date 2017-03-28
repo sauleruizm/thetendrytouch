@@ -10,6 +10,10 @@ using System.Threading;
 using System.Web.Http;
 using Web.TendryTouch.WebApi.Models;
 using Zen.Barcode;
+using Web.TendryTouch.WebApi.Extension;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Drawing.Imaging;
 
 namespace Web.TendryTouch.WebApi.Controllers
 {
@@ -48,44 +52,27 @@ namespace Web.TendryTouch.WebApi.Controllers
 					string text = string.Concat<int>( new int[] { newBarcode.GS1Prefix,
 						newBarcode.ManufacterCode, newBarcode.ProductCode });
 
-					var barimg = BarcodeDrawFactory.CodeEan13WithChecksum;
+					var img = BarcodeDrawFactory
+						.CodeEan13WithChecksum
+							.Draw(text, newBarcode.Height, newBarcode.Scale)
+							.AddText(text, newBarcode.ColorText);
 					
-					var img = barimg.Draw(text, newBarcode.Width);
-					img = AddText(img, text);
 					var memoryStream = new MemoryStream();
-					img.Save(memoryStream,System.Drawing.Imaging.ImageFormat.Png);
+					img.Save(memoryStream, ImageFormat.Png);
 					
 					var response = new HttpResponseMessage(HttpStatusCode.OK) 
 					{
-						Content = new ByteArrayContent(memoryStream.ToArray()),
-						
-						//Content = new MediaTypeHeaderValue("image/jpeg"),
-					   
+						Content = new ByteArrayContent(memoryStream.ToArray()),					   
 						StatusCode = HttpStatusCode.OK
 					};
 					response.Content.Headers.Add("content-disposition", "attachment; filename=test.png");
 					response.Content.Headers.Add("content-Type", "image/png");
 					return response;
 				}
-				catch (Exception )
+				catch (Exception ex)
 				{
-
-					throw;
+					return new HttpResponseMessage(HttpStatusCode.OK) {  StatusCode = HttpStatusCode.BadRequest };
 				}
-			}
-
-
-			public static Image AddText(this Image image, string text)
-			{
-				Graphics surface = Graphics.FromImage(image);
-				Font font = new Font("Tahoma", 10);
-
-				System.Drawing.SolidBrush brush = new SolidBrush(Color.Red);
-
-				surface.DrawString(text, font, brush, new PointF { X = 30, Y = 10 });
-
-				surface.Dispose();
-				return image;
 			}
 
 		#endregion -- Methods --;
