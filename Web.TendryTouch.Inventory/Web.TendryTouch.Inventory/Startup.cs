@@ -4,6 +4,8 @@ using System.Web.Routing;
 using Microsoft.Owin;
 using Owin;
 using Web.TendryTouch.Inventory;
+using Web.TendryTouch.Inventory.Areas.Dashboard;
+using Web.TendryTouch.Inventory.Areas.Inventory;
 
 [assembly: OwinStartupAttribute(typeof(Startup))]
 namespace Web.TendryTouch.Inventory
@@ -13,7 +15,7 @@ namespace Web.TendryTouch.Inventory
 		public void Configuration(IAppBuilder app)
 		{
 			AreaRegistration.RegisterAllAreas();
-			RouteConfig.RegisterRoutes(RouteTable.Routes);
+			//RouteConfig.RegisterRoutes(RouteTable.Routes);			
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 		}
 

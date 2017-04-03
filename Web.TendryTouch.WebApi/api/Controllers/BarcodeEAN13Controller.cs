@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
 using System.Web.Http;
 using Web.TendryTouch.WebApi.Models;
 using Zen.Barcode;
 using Web.TendryTouch.WebApi.Extension;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Drawing.Imaging;
 
 namespace Web.TendryTouch.WebApi.Controllers
@@ -21,7 +14,6 @@ namespace Web.TendryTouch.WebApi.Controllers
 	{
 		#region -- Private constants --
 		#endregion -- Private constants --;
-
 
 		#region -- Private member variables --
 			
@@ -75,6 +67,7 @@ namespace Web.TendryTouch.WebApi.Controllers
 				}
 			}
 
+			
 		#endregion -- Methods --;
 
 	}

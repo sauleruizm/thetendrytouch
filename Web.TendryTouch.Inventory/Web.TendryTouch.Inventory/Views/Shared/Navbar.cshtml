@@ -98,7 +98,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="@Url.Action("Dashboard","Home")" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="@Url.Action("Dashboard","Home", new { Area = "Dashboard" })" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#">
@@ -116,7 +116,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="@Url.Action("List","Product")"><i class="fa fa-table fa-fw"></i> Inventory</a>
+                            <a href="@Url.Action("List", "Product", new { Area= "Inventory" })"><i class="fa fa-table fa-fw"></i> Inventory</a>
                         </li>
                         <li>
                             <a href="@Url.Action("Add","Sale")"><i class="fa fa-shopping-cart"></i> Sales</a>
