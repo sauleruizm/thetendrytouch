@@ -42,7 +42,7 @@ namespace Web.TendryTouch.Inventory.Areas.Inventory.Controllers
 			}
 
 			[HttpGet]
-			public ActionResult Create()
+			public ActionResult Add()
 			{
 				return View();
 			}

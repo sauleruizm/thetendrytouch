@@ -1,0 +1,44 @@
+﻿@model Web.TendryTouch.Models.Product
+
+@{
+    ViewBag.Title = "Add Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("Add", "Product", new {Areas = "Inventory" }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+         @Html.ActionLink("Back to List", "List", "Product", new { Areas = "Inventory" }, new { @class="btn btn-primary" })
+        <hr />
+        @Html.ValidationSummary(true)
+
+        
+
+        <div class="row">            
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            </div>
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+            </div>
+        </div>
+        <div class="row">            
+            <div class="col-md-3">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <div class="col-md-3">
+                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description)
+            </div>
+            <div class="col-md-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<div id="stockPartial"></div>
