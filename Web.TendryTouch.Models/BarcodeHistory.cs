@@ -17,20 +17,7 @@ namespace Web.TendryTouch.Models
 		/// <summary>
 		/// Contry name of manufacturer
 		/// </summary>
-		[Required]
-		public string Country { get; set; }
-
-		/// <summary>
-		/// Category of item
-		/// </summary>
-		[Required]
-		public string TypeProduct { get; set; }
-
-		/// <summary>
-		/// Unique identifier of item
-		/// </summary>
-		public string CodeProduct { get; set; }
-
+		
 		/// <summary>
 		/// Briefly description of item
 		/// </summary>

@@ -117,8 +117,7 @@ C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTou
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\bin\System.Web.Http.xml
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\bin\System.Web.Http.WebHost.xml
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.csprojResolveAssemblyReference.cache
-C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.Migrations.First.resources
-C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.csproj.GenerateResource.Cache
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.dll
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.pdb
-C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.Migrations.second.resources
+C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.Migrations.InitialCreation.resources
+C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.WebApi\obj\Debug\Web.TendryTouch.WebApi.csproj.GenerateResource.Cache

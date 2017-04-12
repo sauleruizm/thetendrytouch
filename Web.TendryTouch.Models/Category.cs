@@ -12,18 +12,8 @@ namespace Web.TendryTouch.Models
 
 		public string Name { get; set; }
 
-
-		//[Key, ForeignKey("Product")]
-		//[Column(Order = 2)]
-		//public int ProductId { get; set; }
-
 		public virtual Product Product { get; set; }
 
-		//[Key, ForeignKey("BarcodeHistory")]
-		//[Column(Order = 3)]
-		//public int BarcodeId { get; set; }
-
-		//public virtual BarcodeHistory Barcode { get; set; }	
 		
 	}
 }

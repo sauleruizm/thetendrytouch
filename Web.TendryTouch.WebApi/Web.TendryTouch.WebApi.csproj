@@ -177,13 +177,9 @@
     <Compile Include="Data\RepositoryPattern\IReadOnlyRepository.cs" />
     <Compile Include="Data\RepositoryPattern\IRepository.cs" />
     <Compile Include="Extension\ImageExtension.cs" />
-    <Compile Include="Migrations\201703242043251_First.cs" />
-    <Compile Include="Migrations\201703242043251_First.Designer.cs">
-      <DependentUpon>201703242043251_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704032227154_second.cs" />
-    <Compile Include="Migrations\201704032227154_second.Designer.cs">
-      <DependentUpon>201704032227154_second.cs</DependentUpon>
+    <Compile Include="Migrations\201704121303127_InitialCreation.cs" />
+    <Compile Include="Migrations\201704121303127_InitialCreation.Designer.cs">
+      <DependentUpon>201704121303127_InitialCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BarcodeCreateRequestModel.cs" />
@@ -218,11 +214,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703242043251_First.resx">
-      <DependentUpon>201703242043251_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704032227154_second.resx">
-      <DependentUpon>201704032227154_second.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704121303127_InitialCreation.resx">
+      <DependentUpon>201704121303127_InitialCreation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using MySql.Data.Entity;
 using Web.TendryTouch.Models;
 
@@ -31,8 +32,6 @@ namespace Web.TendryTouch.WebApi.Models
 
 			public DbSet<Category> Categories { get; set; }
 
-			public DbSet<BarcodeHistory> Barcodes { get; set; }
-
 		#endregion -- Properties --;
 
 
@@ -40,6 +39,7 @@ namespace Web.TendryTouch.WebApi.Models
 
 			protected override void OnModelCreating(DbModelBuilder modelBuilder)
 			{
+				modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 			}
 
 		#endregion -- Methods --;

@@ -8,36 +8,49 @@ namespace Web.TendryTouch.Models
 	[Table("product")]
 	public partial class Product: IEntity
 	{		
-
-		//[Key, Column(Order= 1)]
-		//public int ProductId { get; set; }
+		/// <summary>
+		/// Secuencial identification of product
+		/// </summary>
+		[Key, Column(Order= 1)]
+		public int ProductId { get; set; }
 
 		/// <summary>
-		/// Define a relationship between Product & BarcodeHistory
-		/// show a list of Barcode of this product
+		/// Name of product.
 		/// </summary>
-		[Key,Column(Order = 1), ForeignKey(name: "BarcodeHistory")]
-		public int BarcodeId { get; set; }
-		public virtual BarcodeHistory BarcodeHistory { get; set; }
-
+		[Required, MaxLength(64)]
 		public string Name { get; set; }
 
+		/// <summary>
+		/// a extense description of product
+		/// </summary>
+		[MaxLength(512)]
 		public string Description { get; set; }
-
-		public DateTime Created { get; set; }
 
 		/// <summary>
 		/// Precio de compra
 		/// </summary>
+		[Required]
 		public decimal Price { get; set; }
 
+		[Required]
 		public decimal PriceSale { get; set; }
-
+		
+		[Required]
 		public int Quantity { get; set; }
 
-		
+		[Required]
+		public string Country { get; set; }
 
-		//public virtual Category Categories { get; set; }
+		/// <summary>
+		/// Category of item
+		/// </summary>
+		[Required]
+		public string TypeProduct { get; set; }
+
+		/// <summary>
+		/// Unique identifier of item
+		/// </summary>
+		public string CodeProduct { get; set; }
 
 	}
 }
