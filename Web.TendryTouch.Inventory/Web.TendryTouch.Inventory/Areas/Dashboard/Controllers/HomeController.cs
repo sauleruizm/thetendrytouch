@@ -10,5 +10,10 @@ namespace Web.TendryTouch.Inventory.Areas.Dashboard.Controllers
         {
             return View();
         }
+
+		public PartialViewResult PartialBoard()
+		{
+			return PartialView();
+		}
 	}
 }

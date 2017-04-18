@@ -19,7 +19,9 @@ namespace Web.TendryTouch.Inventory
 						"~/Scripts/jquery-{version}.js", 
 						"~/Scripts/bootstrap.js",
 						"~/Scripts/metisMenu.js",
-						"~/Scripts/sb-admin-2.js"
+						"~/Scripts/sb-admin-2.js",
+						"~/Scripts/knockout-{version}.debug.js",
+						"~/Scripts/sammy-{version}.js"
 					));
 
 
@@ -32,8 +34,7 @@ namespace Web.TendryTouch.Inventory
 					));
 
 				//css
-				bundles.Add(new StyleBundle("~/css/PagedList").Include(
-					"~/Content/PagedList.css"));
+				bundles.Add(new StyleBundle("~/css/PagedList").Include("~/Content/PagedList.css"));
 			}
 
 		#endregion -- Methods --;

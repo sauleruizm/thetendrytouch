@@ -3,7 +3,7 @@ namespace Web.TendryTouch.WebApi.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreation : DbMigration
+    public partial class Second : DbMigration
     {
         public override void Up()
         {
@@ -13,11 +13,12 @@ namespace Web.TendryTouch.WebApi.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Name = c.String(unicode: false),
-                        Product_ProductId = c.Int(),
+                        CreatedDate = c.DateTime(nullable: false, precision: 0),
+                        CreatedBy = c.String(unicode: false),
+                        ModifiedDate = c.DateTime(nullable: false, precision: 0),
+                        ModifiedBy = c.String(unicode: false),
                     })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.product", t => t.Product_ProductId)
-                .Index(t => t.Product_ProductId);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.product",
@@ -32,19 +33,22 @@ namespace Web.TendryTouch.WebApi.Migrations
                         Country = c.String(nullable: false, unicode: false),
                         TypeProduct = c.String(nullable: false, unicode: false),
                         CodeProduct = c.String(unicode: false),
+                        CategoryId = c.Int(nullable: false),
                         CreatedDate = c.DateTime(nullable: false, precision: 0),
                         CreatedBy = c.String(unicode: false),
                         ModifiedDate = c.DateTime(nullable: false, precision: 0),
                         ModifiedBy = c.String(unicode: false),
                     })
-                .PrimaryKey(t => t.ProductId);
+                .PrimaryKey(t => t.ProductId)
+                .ForeignKey("dbo.category", t => t.CategoryId, cascadeDelete: true)
+                .Index(t => t.CategoryId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.category", "Product_ProductId", "dbo.product");
-            DropIndex("dbo.category", new[] { "Product_ProductId" });
+            DropForeignKey("dbo.product", "CategoryId", "dbo.category");
+            DropIndex("dbo.product", new[] { "CategoryId" });
             DropTable("dbo.product");
             DropTable("dbo.category");
         }

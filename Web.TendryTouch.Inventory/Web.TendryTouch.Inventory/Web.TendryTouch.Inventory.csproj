@@ -183,8 +183,18 @@
     <Content Include="Content\variables.less" />
     <Content Include="Areas\Inventory\Views\web.config" />
     <Content Include="Areas\Dashboard\Views\web.config" />
+    <Content Include="Scripts\Areas\dashboard\MenubarKnowoutSammy.js" />
+    <Content Include="Scripts\Areas\Shared\configSammy.min.js">
+      <DependentUpon>configSammy.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Areas\Shared\configSammy.min.js.map">
+      <DependentUpon>configSammy.js</DependentUpon>
+    </Content>
+    <Content Include="Areas\Dashboard\Views\Home\PartialBoard.cshtml" />
+    <Content Include="Areas\Inventory\Views\Category\Index.cshtml" />
+    <Content Include="Scripts\Areas\Inventory\ko.CategoryCreate.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\Areas\Inventory\AddProduct.js" />
+    <Content Include="Scripts\Areas\Shared\configSammy.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -200,6 +210,8 @@
     <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Scripts\metisMenu.js" />
     <Content Include="Scripts\metisMenu.min.js" />
+    <Content Include="Scripts\sammy-0.7.5.js" />
+    <Content Include="Scripts\sammy-0.7.5.min.js" />
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -208,6 +220,7 @@
     <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
+    <Compile Include="Areas\Inventory\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Inventory\InventoryAreaRegistration.cs" />
     <Compile Include="Controllers\BaseMvcController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\HomeController.cs" />

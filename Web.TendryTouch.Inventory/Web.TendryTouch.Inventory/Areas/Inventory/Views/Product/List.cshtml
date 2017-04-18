@@ -7,16 +7,22 @@
 @model List<Product>
 
 @{
-    ViewBag.Title = "List of Purchases";
-    Layout = "~/Views/Shared/_Layout.cshtml";    
+    ViewBag.Title = "List of Purchases";   
 }
 
 @section otherCSS { @Styles.Render("~/css/PagedList") }
 
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Products</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
 <div class="panel panel-primary">
     <div class="panel-heading">Products List</div>
     <div class="panel-body">
-        @Html.ActionLink("Add","Add","Product",new { Areas="Inventory"},new { @class="btn btn-primary"})
+        @Html.ActionLink("Add","Add","Product", new { Area = "Inventory"}, new { @class = "btn btn-primary"})
         <table class="table table-hover table-striped table-responsive table-condensed">
             <thead>
                 <tr>
@@ -30,7 +36,7 @@
             <tbody>
                 @foreach (Product prod in (PagedList.IPagedList<Product>)ViewBag.OnePageOfProducts){
                     <tr class="row">
-                        <td class="col-sm-3 col-md-3">@Html.ActionLink(prod.BarcodeId.ToString(), "Edit")</td>
+                        <td class="col-sm-3 col-md-3">@Html.ActionLink(prod.ProductId.ToString(), "Edit")</td>
                         <td class="col-sm-3 col-md-3">@prod.Name</td>
                         <td class="col-sm-3 col-md-2">@string.Format("{0:0,0.00}", prod.Price)</td>
                         <td class="col-sm-3 col-md-2">@string.Format("{0:0,0}", prod.PriceSale)</td>

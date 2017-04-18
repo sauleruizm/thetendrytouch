@@ -33,7 +33,7 @@ namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 			public void Create<TEntity>(TEntity entity, string createdBy = null) where TEntity : IEntity
 			{
 				entity.CreatedDate = DateTime.UtcNow;
-				entity.CreatedBy = createdBy;
+				entity.CreatedBy = createdBy;				
 				_context.Set<TEntity>().Add(entity);
 			}
 
@@ -65,7 +65,12 @@ namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 			{
 				try
 				{
+					if (_context.Database.Connection.State != System.Data.ConnectionState.Open )
+					{
+						_context.Database.Connection.Open();
+					}
 					_context.SaveChanges();
+					_context.Database.Connection.Close();
 				}
 				catch (DbEntityValidationException e)
 				{
@@ -77,6 +82,10 @@ namespace Web.TendryTouch.WebApi.Models.RepositoryPattern
 			{
 				try
 				{
+					if (_context.Database.Connection.State != System.Data.ConnectionState.Open)
+					{
+						_context.Database.Connection.Open();
+					}
 					return await _context.SaveChangesAsync();
 				}
 				catch (DbEntityValidationException e)

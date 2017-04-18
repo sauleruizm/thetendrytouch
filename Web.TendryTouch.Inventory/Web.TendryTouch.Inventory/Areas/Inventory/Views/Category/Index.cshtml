@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Category";
+}
+@using Web.TendryTouch.Models
+@using PagedList.Mvc;
+@using PagedList;
+@model IEnumerable<Category>
+@section otherCSS { @Styles.Render("~/css/PagedList") }
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Categories</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Category List</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#@Url.Action("Create", "Category", new { Area = "Inventory" })" class="btn btn-primary">Add</a>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+        <table class="table table-hover table-striped table-responsive table-condensed">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.ID)</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (PagedList.IPagedList<Category>)ViewBag.OnePageOfCategories)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.PagedListPager((IPagedList)ViewBag.OnePageOfCategories, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+

@@ -18,6 +18,9 @@ namespace Web.TendryTouch.Inventory
 				url: "dashboard/{controller}/{action}/{id}",
 				defaults: new {controller = "Home", action = "Dashboard", id = UrlParameter.Optional }
 			);
+
+			routes.MapRoute(name: "Inventory", url: "inventory/{controller}/{action}/{id}",
+				defaults: new { action = "Category", id = UrlParameter.Optional });
 		}
 	}
 }

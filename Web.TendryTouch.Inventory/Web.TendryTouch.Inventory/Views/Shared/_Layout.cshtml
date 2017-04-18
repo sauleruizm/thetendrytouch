@@ -10,6 +10,7 @@
     <meta name="description" content="The Tendry Touch">
     <meta name="author" content="Saúl E. Ruíz M.">
     <title>@ViewBag.Title</title>
+    <link rel="icon" href="data:;base64,=">
     @Styles.Render("~/css")
     @RenderSection("otherCSS", required: false)
 </head>
@@ -28,5 +29,55 @@
     
     @Scripts.Render("~/js")
     @RenderSection("scripts", required: false)
+    
+    <script type="text/javascript">
+        $(function () {
+
+            $.sammy(function () {
+                /// <summary>
+                /// Configuration for Sammy restfull
+                /// </summary>
+
+                this.element_selector = "#page-wrapper";
+
+                this.get('#@Url.Action("dashboard", "home", new { Area ="Dashboard" })', function (context) {
+                    console.log('get-> #/' + location.hash);
+                    context.load('@Url.Action("partialboard","home", new { Area = "dashboard"})').swap();
+                });
+
+                this.get('#/Home', function (context) {
+                    console.log("get-> #/Home:" + location.hash);
+                });
+
+                this.get('#@Url.Action("List", "Product", new { Area = "Inventory" })', function (ctx) {
+                    /// <summary>
+                    /// Route for show inventory list
+                    /// </summary>
+                    /// <param name="ctx) {"></param>
+                    console.log('get-> #@Url.Action("List", "Product", new { Area = "Inventory" })');
+                    ctx.swap('');
+                    ctx.load('@Url.Action("List", "Product", new { Area = "Inventory" })').swap();
+                });
+
+                /*
+                 *  Routes for =>:
+                 *  Area: Inventory
+                 * 
+                 * */
+                this.get('#@Url.Action("Index", "Category", new { Area = "Inventory" })', function (ctx) {
+                    /// <summary>
+                    /// Category -> Index route [Main]
+                    /// </summary>
+                    /// <param name="ctx"></param>
+                    console.log('get-> #@Url.Action("Index", "Category", new { Area = "Inventory" })');
+                    ctx.swap('');
+                    ctx.load('@Url.Action("Index", "Category", new { Area = "Inventory" })').swap();
+                });
+
+
+            }).run('#@Url.Action("dashboard", "home", new { Area ="Dashboard" })');
+
+        });
+    </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">The Tendry Touch Admin v1.0</a>
+        <a class="navbar-brand" href="#@Url.Action("dashboard", "home", new { Area ="Dashboard" })">The Tendry Touch Admin v1.0</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -98,7 +98,7 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="@Url.Action("Dashboard", "Home", new { Area = "Dashboard" })" class="active">
+                    <a href="#@Url.Action("dashboard", "home", new { Area = "Dashboard" })" class="active">
                         <i class="fa fa-dashboard fa-fw"></i>&nbsp;Dashboard
                     </a>
                 </li>
@@ -122,13 +122,13 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="@Url.Action("Add", "Product", new { Area = "Inventory" })">
-                                <i class="fa fa-file-o"></i>&nbsp;Add
+                            <a href='#@Url.Action("Index", "Category", new { Area = "Inventory" })'>
+                                <i class="fa fa-file-o"></i>&nbsp;Category
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("List", "Product", new { Area = "Inventory" })">
-                                <i class="fa fa-list"></i>&nbsp;List
+                            <a href="#@Url.Action("List", "Product", new { Area = "Inventory" })">
+                                <i class="fa fa-list"></i>&nbsp;Products
                             </a>
                         </li>
                         
