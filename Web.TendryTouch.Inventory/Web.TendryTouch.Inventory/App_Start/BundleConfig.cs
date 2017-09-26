@@ -30,7 +30,8 @@ namespace Web.TendryTouch.Inventory
 					"~/Content/bootstrap.css",
 					"~/Content/fontawesome/font-awesome.css",
 					"~/Content/metisMenu.css",
-					"~/Content/sb-admin-2.css"
+					"~/Content/sb-admin-2.css",
+                    "~/Content/mixins.css"
 					));
 
 				//css

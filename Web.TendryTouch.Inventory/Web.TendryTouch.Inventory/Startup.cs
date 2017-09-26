@@ -15,7 +15,7 @@ namespace Web.TendryTouch.Inventory
 		public void Configuration(IAppBuilder app)
 		{
 			AreaRegistration.RegisterAllAreas();
-			//RouteConfig.RegisterRoutes(RouteTable.Routes);			
+			RouteConfig.RegisterRoutes(RouteTable.Routes);			
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 		}
 

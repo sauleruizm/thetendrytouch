@@ -28,3 +28,15 @@ C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTou
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.Models\obj\Debug\Web.TendryTouch.Models.dll
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.Models\obj\Debug\Web.TendryTouch.Models.pdb
 C:\assa_saruiz_workspaces\LocalRep\git\thetendytouch\thetendytouch\Web.TendryTouch.Models\obj\Debug\Web.TendryTouch.Models.csprojResolveAssemblyReference.cache
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\Web.TendryTouch.Models.dll.config
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\Web.TendryTouch.Models.dll
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\Web.TendryTouch.Models.pdb
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\EntityFramework.dll
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\EntityFramework.xml
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\obj\Debug\Web.TendryTouch.Models.csprojResolveAssemblyReference.cache
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\obj\Debug\Web.TendryTouch.Models.dll
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\obj\Debug\Web.TendryTouch.Models.pdb
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\Web.TendryTouch.Models.dll.CodeAnalysisLog.xml
+C:\Users\saruiz.ASSA\Documents\GitHub\thetendrytouch\Web.TendryTouch.Models\bin\Debug\Web.TendryTouch.Models.dll.lastcodeanalysissucceeded
